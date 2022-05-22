@@ -5,8 +5,7 @@ import Slider from "react-slick";
 import img1 from "../../utilities/banner-02.jpg";
 import img2 from "../../utilities/banner-1.jpg";
 import img3 from "../../utilities/banner-3.png";
-import img4 from "../../utilities/banner-4.jpg";
-import img5 from "../../utilities/banner-5.jpg";
+import img4 from "../../utilities/banner-5.jpg";
 
 const settings = {
   dots: false,
@@ -37,7 +36,10 @@ const Carousel = () => {
           <img src={img4} alt="" className="mx-auto w-full h-[320px]" />
         </div>
         <div>
-          <img src={img5} alt="" className="mx-auto w-full h-[320px]" />
+          <img src={img2} alt="" className="mx-auto w-full h-[320px]" />
+        </div>
+        <div>
+          <img src={img1} alt="" className="mx-auto w-full h-[320px]" />
         </div>
       </Slider>
     </div>
