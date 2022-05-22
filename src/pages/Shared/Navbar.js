@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../utilities/logo.png"
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './../../Firebase/firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+  const logout = () => {
+    signOut(auth);
+  };
   const menuItems = (
     <>
       <li>
@@ -17,11 +24,22 @@ const Navbar = () => {
       <li>
         <Link to="/portfolio">Portfolio</Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/login">Login</Link>
       </li>
       <li>
         <Link to="/signup">Signup</Link>
+      </li> */}
+      <li>
+        {user ? (
+          <button className="btn btn-outline" onClick={logout}>
+            LogOut
+          </button>
+        ) : (
+          <Link className="btn btn-outline" to="/login">
+            LogIn
+          </Link>
+        )}
       </li>
     </>
   );
