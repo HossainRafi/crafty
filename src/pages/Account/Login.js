@@ -1,66 +1,64 @@
 import React, { useEffect } from "react";
-import { useNavigate, Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import Loading from "../Shared/Loading";
-import auth from './../../Firebase/firebase.init';
-
-
+import auth from "./../../Firebase/firebase.init";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+  const {
+    register,
+    watch,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+  const email = watch("email");
 
-    const navigate = useNavigate();
-    const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
-    const {
-      register,
-      watch,
-      formState: { errors },
-      handleSubmit,
-    } = useForm();
-    const email = watch("email");
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
 
-    const [signInWithEmailAndPassword, user, loading, error] =
-      useSignInWithEmailAndPassword(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
-    const [signInWithGoogle, gUser, gLoading, gError] =
-      useSignInWithGoogle(auth);
+  const [sendPasswordResetEmail, sending, pResetError] =
+    useSendPasswordResetEmail(auth);
 
-    const [sendPasswordResetEmail, sending, pResetError] =
-      useSendPasswordResetEmail(auth);
+  // ----------------------------------------------------------------------
+  // const [token] = useToken(user || gUser);
 
-    
-// ----------------------------------------------------------------------
-    // const [token] = useToken(user || gUser);
-
-    useEffect(() => {
-      if (user || gUser) {
-        navigate(from, { replace: true });
-      }
-    }, [from, navigate, user , gUser]);
-// -----------------------------------------------------------------------
-
-
-    if (loading || gLoading || sending) {
-      return <Loading />;
+  useEffect(() => {
+    if (user || gUser) {
+      navigate(from, { replace: true });
     }
+  }, [from, navigate, user, gUser]);
+  // -----------------------------------------------------------------------
 
-    const onSubmit = (data) => {
-      signInWithEmailAndPassword(data.email, data.password);
-    };
+  if (loading || gLoading || sending) {
+    return <Loading />;
+  }
+
+  const onSubmit = (data) => {
+    signInWithEmailAndPassword(data.email, data.password);
+  };
 
   return (
-    <div className="w-1/2 mx-auto shadow-xl p-10 my-10 rounded-xl">
+    <div className="w-2/5 mx-auto p-10 my-10 rounded-xl bg-gray-300">
       <div>
-        <h1 className="text-center text-2xl font-bold text-secondary  ">
+        <h1 className="text-center text-4xl font-bold font-serif text-blue-600 pb-10">
           Please Login
         </h1>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control ">
             <label className="label">
-              <span className="label-text">Email</span>
+              <span className="label-text font-serif font-semibold">Email</span>
             </label>
             <input
               type="email"
@@ -72,7 +70,7 @@ const Login = () => {
                 },
                 pattern: {
                   value: /^\S+@\S+\.\S+$/,
-                  message: "Provide a valid email",
+                  message: "Provide a valid Email",
                 },
               })}
             />
@@ -92,7 +90,9 @@ const Login = () => {
 
           <div className="form-control w-full">
             <label className="label">
-              <span className="label-text">Password</span>
+              <span className="label-text  font-serif font-semibold">
+                Password
+              </span>
             </label>
             <input
               type="password"
@@ -123,7 +123,7 @@ const Login = () => {
           </div>
 
           <input
-            className="btn w-2/5 mx-auto block"
+            className="btn w-2/6 mx-auto font-bold bg-gray-900 hover:bg-gray-700 text-white border-0 block mt-4"
             type="submit"
             value="Login"
           />
@@ -135,14 +135,17 @@ const Login = () => {
         </p>
       )}
 
-      <p className="text-center mt-4">
-        New to doctors portal?{" "}
-        <Link to="/register" className="text-secondary">
-          Create new account
+      <p className="text-center text-lg font-semibold mt-4">
+        New Here ?{" "}
+        <Link
+          to="/register"
+          className="text-blue-600 border-b-2 border-blue-600"
+        >
+          Create An Account
         </Link>
       </p>
-      <p className="text-center mt-4">
-        Forgat Password?{" "}
+      <p className="text-center text-lg font-semibold mt-3">
+        Forgat Password ?{" "}
         <button
           className="text-secondary"
           onClick={async () => {
@@ -150,7 +153,9 @@ const Login = () => {
             alert("Sent email");
           }}
         >
-          Reset Password
+          <span className="text-blue-600  text-lg font-semibold border-b-2 border-blue-600">
+            Reset Password
+          </span>
         </button>
       </p>
       <div className="divider">OR</div>

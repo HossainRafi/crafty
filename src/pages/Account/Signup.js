@@ -48,16 +48,18 @@ const Signup = () => {
     await signInWithGoogle();
   };
   return (
-    <div className="w-1/2 mx-auto shadow-xl p-10 my-10 rounded-xl">
+    <div className="w-2/5 mx-auto p-10 my-10 rounded-xl bg-gray-300">
       <div>
-        <h1 className="text-center text-2xl font-bold text-secondary  ">
+        <h1 className="text-center text-4xl font-bold font-serif text-blue-600 pb-10">
           Please Register
         </h1>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control ">
             <label className="label">
-              <span className="label-text">Name</span>
+              <span className="label-text font-serif font-semibold">
+                Nick Name
+              </span>
             </label>
             <input
               type="text"
@@ -79,7 +81,7 @@ const Signup = () => {
           </div>
           <div className="form-control ">
             <label className="label">
-              <span className="label-text">Email</span>
+              <span className="label-text font-serif font-semibold">Email</span>
             </label>
             <input
               type="email"
@@ -111,7 +113,9 @@ const Signup = () => {
 
           <div className="form-control w-full">
             <label className="label">
-              <span className="label-text">Password</span>
+              <span className="label-text font-serif font-semibold">
+                Password
+              </span>
             </label>
             <input
               type="password"
@@ -142,7 +146,7 @@ const Signup = () => {
           </div>
 
           <input
-            className="btn w-2/5 mx-auto block"
+            className="btn w-2/6 mx-auto font-bold bg-gray-900 hover:bg-gray-700 text-white border-0 block mt-4"
             type="submit"
             value="Register"
           />
@@ -154,9 +158,9 @@ const Signup = () => {
         </p>
       )}
 
-      <p className="text-center mt-4">
-        Already You Have an account?{" "}
-        <Link to="/login" className="text-secondary">
+      <p className="text-center text-lg font-semibold mt-4">
+        Have an account ?{" "}
+        <Link to="/login" className="text-blue-600 border-b-2 border-blue-600">
           Please Login
         </Link>
       </p>
