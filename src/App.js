@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import Home from './pages/Home/Home';
-import Dashboard from './pages/Dashboard/Dashboard';
-import Blogs from './pages/Blogs/Blogs';
-import Portfolio from './pages/Portfolio/Portfolio';
-import Navbar from './pages/Shared/Navbar';
-
+import Home from "./pages/Home/Home";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Blogs from "./pages/Blogs/Blogs";
+import Portfolio from "./pages/Portfolio/Portfolio";
+import Navbar from "./pages/Shared/Navbar";
+import Error from "./pages/Shared/Error";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );
