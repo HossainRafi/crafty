@@ -21,7 +21,7 @@ const settings = {
 
 const Carousel = () => {
   return (
-    <div className="px-7 bg-slate-300">
+    <div className="px-7">
       <Slider {...settings}>
         <div>
           <img src={img1} alt="" className="mx-auto w-full h-[320px]" />

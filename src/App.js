@@ -10,7 +10,7 @@ import Signup from './pages/Account/Signup';
 
 function App() {
   return (
-    <div>
+    <div className="bg-gray-200">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

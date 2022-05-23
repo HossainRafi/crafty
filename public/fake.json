@@ -1,0 +1,56 @@
+[
+  {
+    "_id":"1",
+    "name": "Chain Saw",
+    "img": "https://i.ibb.co/H4r9KNN/chain-saw.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam illum culpa amet nulla veniam asperiores tempora voluptate eum!amet nulla veniam asperiores tempora voluptate eum",
+    "minquantity": "45",
+    "maxquantity": "500",
+    "price": "560"
+  },
+  {
+    "_id": "2",
+    "name": "Allen Key",
+    "img": "https://i.ibb.co/ByntbfB/allen-key.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam illum culpa amet nulla veniam asperiores tempora voluptate eum!illum culpa amet nulla veniam asperiores tempora voluptate eum!",
+    "minquantity": "100",
+    "maxquantity": "500",
+    "price": "15"
+  },
+  {
+    "_id": "3",
+    "name": "Circular Saw",
+    "img": "https://i.ibb.co/mCpW29J/circular-saw.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam illum culpa amet nulla veniam asperiores tempora voluptate eum!",
+    "minquantity": "50",
+    "maxquantity": "500",
+    "price": "550"
+  },
+  {
+    "_id": "4",
+    "name": "Drill Machine",
+    "img": "https://i.ibb.co/pZLqNtM/drill-machine.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam illum culpa amet nulla veniam asperiores tempora voluptate eum!ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam",
+    "minquantity": "40",
+    "maxquantity": "500",
+    "price": "420"
+  },
+  {
+    "_id": "5",
+    "name": "Hammer",
+    "img": "https://i.ibb.co/jbDxTfP/hammer.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam illum culpa amet nulla veniam asperiores tempora voluptate eum!",
+    "minquantity": "80",
+    "maxquantity": "800",
+    "price": "20"
+  },
+  {
+    "_id": "6",
+    "name": "Electric Hammer",
+    "img": "https://i.ibb.co/H4Y2B3c/electric-hammer.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam illum culpa amet nulla veniam asperiores tempora voluptate eum!",
+    "minquantity": "30",
+    "maxquantity": "500",
+    "price": "550"
+  }
+]

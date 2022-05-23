@@ -24,12 +24,6 @@ const Navbar = () => {
       <li>
         <Link to="/portfolio">Portfolio</Link>
       </li>
-      {/* <li>
-        <Link to="/login">Login</Link>
-      </li>
-      <li>
-        <Link to="/signup">Signup</Link>
-      </li> */}
       <li>
         {user ? (
           <button className="btn btn-outline" onClick={logout}>
@@ -41,10 +35,11 @@ const Navbar = () => {
           </Link>
         )}
       </li>
+      <li>{user?.uid ? <p>{user.displayName}</p> : ""}</li>
     </>
   );
   return (
-    <div className="navbar bg-gray-200">
+    <div className="navbar bg-gray-300">
       <div className="navbar-start px-5">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
