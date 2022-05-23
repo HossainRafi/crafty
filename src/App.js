@@ -7,6 +7,8 @@ import Navbar from "./pages/Shared/Navbar";
 import Error from "./pages/Shared/Error";
 import Login from './pages/Account/Login';
 import Signup from './pages/Account/Signup';
+import Footer from "./pages/Shared/Footer";
+import Purchase from './pages/Purchase/Purchase';
 
 function App() {
   return (
@@ -16,11 +18,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/purchase/:id" element={<Purchase />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
