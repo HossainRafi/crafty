@@ -1,9 +1,9 @@
 [
   {
     "_id":"1",
-    "name": "Chain Saw",
-    "img": "https://i.ibb.co/H4r9KNN/chain-saw.png",
-    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam illum culpa amet nulla veniam asperiores tempora voluptate eum!amet nulla veniam asperiores tempora voluptate eum",
+    "name": "Circular Saw",
+    "img": "https://i.ibb.co/mCpW29J/circular-saw.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam illum culpa amet nulla veniam asperiores tempora voluptate eum!",
     "minquantity": "45",
     "maxquantity": "500",
     "price": "560"
@@ -12,15 +12,15 @@
     "_id": "2",
     "name": "Allen Key",
     "img": "https://i.ibb.co/ByntbfB/allen-key.png",
-    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam illum culpa amet nulla veniam asperiores tempora voluptate eum!illum culpa amet nulla veniam asperiores tempora voluptate eum!",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam illum culpa amet nulla veniam asperiores tempora voluptate eum!",
     "minquantity": "100",
     "maxquantity": "500",
     "price": "15"
   },
   {
     "_id": "3",
-    "name": "Circular Saw",
-    "img": "https://i.ibb.co/mCpW29J/circular-saw.png",
+    "name": "Chain Saw",
+    "img": "https://i.ibb.co/H4r9KNN/chain-saw.png",
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam illum culpa amet nulla veniam asperiores tempora voluptate eum!",
     "minquantity": "50",
     "maxquantity": "500",
@@ -30,7 +30,7 @@
     "_id": "4",
     "name": "Drill Machine",
     "img": "https://i.ibb.co/pZLqNtM/drill-machine.png",
-    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam illum culpa amet nulla veniam asperiores tempora voluptate eum!ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos ullam illum culpa amet nulla veniam asperiores tempora voluptate eum!",
     "minquantity": "40",
     "maxquantity": "500",
     "price": "420"
