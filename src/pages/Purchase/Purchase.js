@@ -1,19 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import auth from "./../../Firebase/firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useParams } from "react-router-dom";
 
 const Purchase = () => {
   const [user] = useAuthState(auth);
+  const { id } = useParams();
+  const [products, setProducts] = useState({});
+  console.log(id);
+  useEffect(() => {
+    fetch(`http://localhost:5000/product/${id}`)
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, [id]);
+  const { _id, name, img, minquantity, maxquantity, desc, price } = products;
   return (
-    <div className="hero min-h-screen p-10">
-      <div className="hero-content flex-col gap-10 lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now!</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+    <div className="hero min-h-screen py-10 px-20">
+      <div className="hero-content flex-col gap-20 lg:flex-row-reverse">
+        <div className="card bg-gray-50">
+          <figure className="px-5 pt-5">
+            <img src={img} alt="" className="rounded-xl w-[250px] h-[210px]" />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title text-2xl mx-auto font-bold">{name}</h2>
+            <p className="text-justify">{desc}</p>
+            <p className="font-bold">Available Product: {maxquantity}</p>
+            <p className="font-bold">Minimum Order: {minquantity}</p>
+            <p className="font-bold">Per Product Price: ${price}</p>
+          </div>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm bg-base-100">
           <h1 className="text-center font-serif font-bold text-4xl pt-5 ">
@@ -22,7 +36,9 @@ const Purchase = () => {
           <div className="card-body">
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-serif font-bold">Your Name</span>
+                <span className="label-text font-serif font-bold">
+                  Your Name
+                </span>
               </label>
               <input
                 type="text"
@@ -33,7 +49,9 @@ const Purchase = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-serif font-bold">Your Email</span>
+                <span className="label-text font-serif font-bold">
+                  Your Email
+                </span>
               </label>
               <input
                 type="text"
@@ -44,7 +62,9 @@ const Purchase = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-serif font-bold">Your Address</span>
+                <span className="label-text font-serif font-bold">
+                  Your Address
+                </span>
               </label>
               <input type="text" className="input input-bordered" />
             </div>
