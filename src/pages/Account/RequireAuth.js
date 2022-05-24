@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Navigate, useLocation } from "react-router-dom";
-import auth from "../../../Firebase/Firebase.init";
+import auth from "../../Firebase/firebase.init";
 import Loading from "../Shared/Loading";
 
 const RequireAuth = ({ children }) => {
@@ -14,7 +14,7 @@ const RequireAuth = ({ children }) => {
   if (loading) {
     return (
       <p className="flex justify-center">
-        <Loading/>
+        <Loading />
       </p>
     );
   }

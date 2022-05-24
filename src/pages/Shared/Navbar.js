@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../utilities/logo.png"
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from './../../Firebase/firebase.init';
-import { signOut } from 'firebase/auth';
+import logo from "../../utilities/logo.png";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./../../Firebase/firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -15,9 +15,11 @@ const Navbar = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
-      <li>
-        <Link to="/dashboard">Dashboard</Link>
-      </li>
+      {user && (
+        <li>
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+      )}
       <li>
         <Link to="/blogs">Blogs</Link>
       </li>

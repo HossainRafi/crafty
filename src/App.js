@@ -2,13 +2,16 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Blogs from "./pages/Blogs/Blogs";
-import Portfolio from "./pages/Portfolio/Portfolio";
 import Navbar from "./pages/Shared/Navbar";
 import Error from "./pages/Shared/Error";
-import Login from './pages/Account/Login';
-import Signup from './pages/Account/Signup';
+import Login from "./pages/Account/Login";
+import Signup from "./pages/Account/Signup";
 import Footer from "./pages/Shared/Footer";
-import Purchase from './pages/Purchase/Purchase';
+import Purchase from "./pages/Purchase/Purchase";
+import RequireAuth from "./pages/Account/RequireAuth";
+import MyProfile from "./pages/Dashboard/MyProfile";
+import MyOrder from "./pages/Dashboard/MyOrder";
+import MyRewiew from "./pages/Dashboard/MyRewiew";
 
 function App() {
   return (
@@ -16,9 +19,28 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/purchase/:id" element={<Purchase />} />
+        <Route
+          path="/purchase/:id"
+          element={
+            <RequireAuth>
+              <Purchase />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route index element={<MyProfile />} />
+          <Route path="myorder" element={<MyOrder />} />
+          <Route path="myreview" element={<MyRewiew />} />
+        </Route>
+
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<Error />} />
