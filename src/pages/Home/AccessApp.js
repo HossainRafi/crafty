@@ -1,5 +1,5 @@
 import React from "react";
-import download from "../../utilities/download.jpg";
+import download from "../../utilities/download2.jpg";
 import app from "../../utilities/app.png";
 import play from "../../utilities/play.png";
 
@@ -7,10 +7,11 @@ const AccessApp = () => {
   return (
     <div className="pb-10">
       <div>
-        <h2 className="text-3xl text-blue-900  font-serif pt-10 pb-2 px-5">
+        <h2 className="text-3xl text-blue-900  font-serif pt-10 pb-2 px-10">
           Shop the Right Way With the CRAFTY APP
         </h2>
-        <p className="px-5 pb-3 text-justify">
+        {/* <img src={download} alt="" className="w-10/12 mx-auto h-[400px] pb-3" /> */}
+        <p className="px-10 pb-3 text-justify">
           When it comes to shopping at Crafty, we want to make it as easy and
           convenient as possible. Enter the app for Crafty. Its components are
           designed to create a shopping experience you’ll enjoy — before, during
@@ -24,7 +25,7 @@ const AccessApp = () => {
           Crafty, do it right. Download our app today.
         </p>
       </div>
-      <img src={download} alt="" className="w-full h-[400px] pb-3" />
+
       <h2 className="text-3xl text-center font-serif py-5">
         Available On Tablets & Other Smart Devices
       </h2>
