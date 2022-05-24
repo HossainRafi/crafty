@@ -66,7 +66,11 @@ const Purchase = () => {
                   Your Address
                 </span>
               </label>
-              <input type="text" className="input input-bordered" />
+              <input
+                type="text"
+                name="address"
+                className="input input-bordered"
+              />
             </div>
             <div className="form-control">
               <label className="label">
@@ -74,7 +78,11 @@ const Purchase = () => {
                   Phone Number
                 </span>
               </label>
-              <input type="number" className="input input-bordered" />
+              <input
+                type="number"
+                name="mobile"
+                className="input input-bordered"
+              />
             </div>
             <div className="form-control">
               <label className="label">
@@ -82,7 +90,11 @@ const Purchase = () => {
                   Product Quantity
                 </span>
               </label>
-              <input type="number" className="input input-bordered" />
+              <input
+                type="number"
+                name="quantity"
+                className="input input-bordered"
+              />
             </div>
 
             <div className="form-control mt-6">
