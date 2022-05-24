@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import auth from "./../../Firebase/firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Purchase = () => {
   const [user] = useAuthState(auth);
@@ -33,9 +34,14 @@ const Purchase = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // toast.success("Item Added Successfully", { id: "toastId" });
         if (data.insertedId) {
-          alert("purchase done");
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your order is accepted",
+            showConfirmButton: false,
+            timer: 1500,
+          });
           e.target.reset();
         }
       });
