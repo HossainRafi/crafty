@@ -5,16 +5,16 @@ const Product = ({ product }) => {
   const { _id, name, img, minquantity, maxquantity, desc, price } = product;
   console.log(_id);
   return (
-    <div className="card bg-gray-50">
-      <figure className="px-5 pt-5">
+    <div className="card bg-gray-100">
+      <figure className="px-2 pt-5">
         <img src={img} alt="" className="rounded-xl w-[230px] h-[190px]" />
       </figure>
       <div className="card-body">
         <h2 className="card-title text-2xl mx-auto font-bold">{name}</h2>
         <p className="text-justify">{desc}</p>
-        <p className="font-bold">Available Product: {maxquantity}</p>
-        <p className="font-bold">Minimum Order: {minquantity}</p>
-        <p className="font-bold">Per Product Price: ${price}</p>
+        <p className="font-bold">Available Product: {maxquantity} Units</p>
+        <p className="font-bold">Minimum Order: {minquantity} Units</p>
+        <p className="font-bold">Price: ${price} Per Unit</p>
       </div>
       <div className="mx-auto pb-5">
         <Link

@@ -24,9 +24,9 @@ const Purchase = () => {
           <div className="card-body">
             <h2 className="card-title text-2xl mx-auto font-bold">{name}</h2>
             <p className="text-justify">{desc}</p>
-            <p className="font-bold">Available Product: {maxquantity}</p>
-            <p className="font-bold">Minimum Order: {minquantity}</p>
-            <p className="font-bold">Per Product Price: ${price}</p>
+            <p className="font-bold">Available Product: {maxquantity} Units</p>
+            <p className="font-bold">Minimum Order: {minquantity} Units</p>
+            <p className="font-bold">Price: ${price} Per Unit</p>
           </div>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm bg-base-100">
