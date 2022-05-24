@@ -1,4 +1,5 @@
 import React from "react";
+import { Swal } from "sweetalert2";
 
 const MyReview = () => {
   const handleForm = (e) => {
@@ -8,6 +9,28 @@ const MyReview = () => {
     const ratting = e.target.ratting.value;
     const review = { name, comment, ratting };
     console.log(review);
+
+    fetch("http://localhost:5000/review", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(review),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        // if (data.insertedId) {
+        //   Swal.fire({
+        //     position: "top-center",
+        //     icon: "success",
+        //     title: "Thank you for your review",
+        //     showConfirmButton: false,
+        //     timer: 1500,
+        //   });
+        //   e.target.reset();
+        // }
+      });
   };
 
   return (
