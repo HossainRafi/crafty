@@ -14,15 +14,24 @@ const Purchase = () => {
       .then((data) => setProducts(data));
   }, [id]);
   const { name, img, minquantity, maxquantity, desc, price } = products;
+  const [error, setError] = useState("");
 
   const handleForm = (e) => {
     e.preventDefault();
+    setError("");
     const name = e.target.name.value;
     const email = e.target.email.value;
     const address = e.target.address.value;
     const mobile = e.target.mobile.value;
     const quantity = e.target.quantity.value;
     const purchase = { name, email, address, mobile, quantity };
+
+    if (quantity < minquantity || quantity > maxquantity) {
+      return setError(
+        `Please order minimum ${minquantity} unit and maximum ${maxquantity} unit`
+      );
+    }
+
     fetch("http://localhost:5000/product", {
       method: "POST",
       body: JSON.stringify({
@@ -133,7 +142,7 @@ const Purchase = () => {
                   className="input input-bordered"
                 />
               </div>
-
+              {error && <p className="text-red-500">{error}</p>}
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Confirm Order</button>
               </div>
