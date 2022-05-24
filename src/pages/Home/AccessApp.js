@@ -10,7 +10,7 @@ const AccessApp = () => {
         <h2 className="text-3xl text-blue-900  font-serif pt-10 pb-2 px-5">
           Shop the Right Way With the CRAFTY APP
         </h2>
-        <p className="px-5 text-justify">
+        <p className="px-5 pb-3 text-justify">
           When it comes to shopping at Crafty, we want to make it as easy and
           convenient as possible. Enter the app for Crafty. Its components are
           designed to create a shopping experience you’ll enjoy — before, during
@@ -25,6 +25,9 @@ const AccessApp = () => {
         </p>
       </div>
       <img src={download} alt="" className="w-full h-[400px] pb-3" />
+      <h2 className="text-3xl text-center font-serif py-5">
+        Available On Tablets & Other Smart Devices
+      </h2>
       <div className="flex gap-10 justify-center">
         <img src={app} alt="" className="w-[160px] h-[50px]" />
         <img src={play} alt="" className="w-[160px] h-[50px]" />

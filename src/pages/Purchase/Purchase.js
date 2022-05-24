@@ -7,13 +7,40 @@ const Purchase = () => {
   const [user] = useAuthState(auth);
   const { id } = useParams();
   const [products, setProducts] = useState({});
-  console.log(id);
   useEffect(() => {
     fetch(`http://localhost:5000/product/${id}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [id]);
-  const { _id, name, img, minquantity, maxquantity, desc, price } = products;
+  const { name, img, minquantity, maxquantity, desc, price } = products;
+
+  const handleForm = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const address = e.target.address.value;
+    const mobile = e.target.mobile.value;
+    const quantity = e.target.quantity.value;
+    const purchase = { name, email, address, mobile, quantity };
+    fetch("http://localhost:5000/product", {
+      method: "POST",
+      body: JSON.stringify({
+        purchase,
+      }),
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // toast.success("Item Added Successfully", { id: "toastId" });
+        if (data.insertedId) {
+          alert("purchase done");
+          e.target.reset();
+        }
+      });
+  };
+
   return (
     <div className="hero min-h-screen py-10 px-20">
       <div className="hero-content flex-col gap-20 lg:flex-row-reverse">
@@ -33,73 +60,78 @@ const Purchase = () => {
           <h1 className="text-center font-serif font-bold text-4xl pt-5 ">
             Fill This Form
           </h1>
-          <div className="card-body">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text font-serif font-bold">
-                  Your Name
-                </span>
-              </label>
-              <input
-                type="text"
-                className="input input-bordered"
-                value={user?.displayName}
-                disabled
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text font-serif font-bold">
-                  Your Email
-                </span>
-              </label>
-              <input
-                type="text"
-                className="input input-bordered"
-                value={user?.email}
-                disabled
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text font-serif font-bold">
-                  Your Address
-                </span>
-              </label>
-              <input
-                type="text"
-                name="address"
-                className="input input-bordered"
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text font-serif font-bold">
-                  Phone Number
-                </span>
-              </label>
-              <input
-                type="number"
-                name="mobile"
-                className="input input-bordered"
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text font-serif font-bold">
-                  Product Quantity
-                </span>
-              </label>
-              <input
-                type="number"
-                name="quantity"
-                className="input input-bordered"
-              />
-            </div>
 
-            <div className="form-control mt-6">
-              <button className="btn btn-primary">Confirm Order</button>
-            </div>
+          <div className="card-body">
+            <form onSubmit={handleForm}>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text font-serif font-bold">
+                    Your Name
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  className="input input-bordered"
+                  value={user?.displayName}
+                  disabled
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text font-serif font-bold">
+                    Your Email
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  className="input input-bordered"
+                  value={user?.email}
+                  name="email"
+                  disabled
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text font-serif font-bold">
+                    Your Address
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  name="address"
+                  className="input input-bordered"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text font-serif font-bold">
+                    Phone Number
+                  </span>
+                </label>
+                <input
+                  type="number"
+                  name="mobile"
+                  className="input input-bordered"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text font-serif font-bold">
+                    Product Quantity
+                  </span>
+                </label>
+                <input
+                  type="number"
+                  name="quantity"
+                  className="input input-bordered"
+                />
+              </div>
+
+              <div className="form-control mt-6">
+                <button className="btn btn-primary">Confirm Order</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
