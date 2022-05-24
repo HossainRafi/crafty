@@ -11,7 +11,7 @@ import Purchase from "./pages/Purchase/Purchase";
 import RequireAuth from "./pages/Account/RequireAuth";
 import MyProfile from "./pages/Dashboard/MyProfile";
 import MyOrder from "./pages/Dashboard/MyOrder";
-import MyRewiew from "./pages/Dashboard/MyRewiew";
+import MyReview from "./pages/Dashboard/MyReview";
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
         >
           <Route index element={<MyProfile />} />
           <Route path="myorder" element={<MyOrder />} />
-          <Route path="myreview" element={<MyRewiew />} />
+          <Route path="myreview" element={<MyReview />} />
         </Route>
 
         <Route path="/login" element={<Login />} />

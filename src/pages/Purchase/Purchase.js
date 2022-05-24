@@ -28,7 +28,7 @@ const Purchase = () => {
 
     if (quantity < minquantity || quantity > maxquantity) {
       return setError(
-        `Please order minimum ${minquantity} unit and maximum ${maxquantity} unit`
+        `Please order between ${minquantity} units to ${maxquantity} units`
       );
     }
 

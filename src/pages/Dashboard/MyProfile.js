@@ -5,12 +5,13 @@ import { Swal } from "sweetalert2";
 
 const MyProfile = () => {
   const [user] = useAuthState(auth);
+  const email = user?.email;
   const [myUser, setMyUser] = useState({});
-  useEffect(() => {
-    fetch(`http://localhost:5000/user/${user.email}`)
-      .then((res) => res.json())
-      .then((data) => setMyUser(data));
-  }, [myUser, user.email]);
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/user/${user.email}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setMyUser(data));
+  // }, [myUser, user.email]);
   const handleForm = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -19,7 +20,14 @@ const MyProfile = () => {
     const mobile = e.target.mobile.value;
     const education = e.target.education.value;
     const linkdin = e.target.linkdin.value;
-    const profile = { name, email, address, mobile, education, linkdin };
+    const profile = {
+      name,
+      email,
+      address,
+      education,
+      mobile,
+      linkdin,
+    };
 
     fetch(`http://localhost:5000/user/${email}`, {
       method: "put",
@@ -28,24 +36,24 @@ const MyProfile = () => {
       },
       body: JSON.stringify(profile),
     })
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Your profile updated successfully",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          e.target.reset();
-        }
+        // if (data.result.modifiedCount) {
+        //   Swal.fire({
+        //     position: "top-center",
+        //     icon: "success",
+        //     title: "Update profile successfully",
+        //     showConfirmButton: false,
+        //     timer: 1500,
+        //   });
+        //   e.target.reset();
+        // }
       });
   };
-  const { name, email, address, mobile, education, linkdin } = myUser;
+  const { name, address, mobile, education, linkdin } = myUser;
   return (
-    <div className="hero min-h-screen py-10 px-20">
+    <div className="hero min-h-screen py-10 px-10">
       <div className="hero-content flex-col gap-20 lg:flex-row-reverse">
         <div className="card-body">
           <h2 className="card-title text-2xl mx-auto font-bold">MY Profile</h2>
