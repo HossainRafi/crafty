@@ -54,7 +54,9 @@ const MyReview = () => {
             className="input input-bordered"
           />
         </div>
-        {rattingError && <p className="text-red-500">{rattingError}</p>}
+        {rattingError && (
+          <p className="text-red-500 text-center">{rattingError}</p>
+        )}
         <div className="form-control mt-6">
           <button className="btn btn-primary">Place Your Review</button>
         </div>
