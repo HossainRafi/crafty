@@ -19,12 +19,12 @@ const Purchase = () => {
   const handleForm = (e) => {
     e.preventDefault();
     setError("");
-    const name = e.target.name.value;
+    const userName = e.target.name.value;
     const email = e.target.email.value;
     const address = e.target.address.value;
     const mobile = e.target.mobile.value;
     const quantity = e.target.quantity.value;
-    const purchase = { name, email, address, mobile, quantity };
+    const purchase = { userName, name, email, address, mobile, quantity };
 
     if (quantity < minquantity || quantity > maxquantity) {
       return setError(
