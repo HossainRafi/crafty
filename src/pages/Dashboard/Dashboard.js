@@ -17,14 +17,20 @@ const Dashboard = () => {
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 overflow-y-auto w-40 font-bold font-serif text-gray-700 bg-base-100">
-          <li className="py-2">
+          <li className="py-1">
             <Link to="/dashboard">My Profile</Link>
           </li>
-          <li className="py-2">
+          <li className="py-1">
             <Link to="/dashboard/myorder">My Order</Link>
           </li>
-          <li className="py-2">
+          <li className="py-1">
             <Link to="/dashboard/myreview">My Review</Link>
+          </li>
+          <li className="py-1">
+            <Link to="/dashboard/additem">Add Item</Link>
+          </li>
+          <li className="py-1">
+            <Link to="/dashboard/myitem">My Item</Link>
           </li>
         </ul>
       </div>

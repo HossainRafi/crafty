@@ -90,7 +90,7 @@ const MyProfile = () => {
 
       <div className="lg:w-2/5 bg-white rounded-2xl">
         <div className="card-body">
-          <h1 className="text-2xl text-center font-serif uppercase pb-5">
+          <h1 className="text-2xl font-bold text-center font-serif uppercase pb-5">
             Update Your Profile
           </h1>
           <form onSubmit={handleUpdateProfile}>

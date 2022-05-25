@@ -12,6 +12,7 @@ import RequireAuth from "./pages/Account/RequireAuth";
 import MyProfile from "./pages/Dashboard/MyProfile";
 import MyOrder from "./pages/Dashboard/MyOrder";
 import MyReview from "./pages/Dashboard/MyReview";
+import Portfolio from "./pages/Portfolio/Portfolio";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="myreview" element={<MyReview />} />
         </Route>
 
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<Error />} />
