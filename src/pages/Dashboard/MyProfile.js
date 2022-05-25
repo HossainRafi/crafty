@@ -56,32 +56,39 @@ const MyProfile = () => {
   };
   const { education, location, phone, linkedIn } = profile;
   return (
-    <div className="lg:flex lg:flex-row-reverse justify-center w-full bg-gray-200 px-6 mb-6 mt-60">
-      <div className="lg:w-2/4 pl-16 md:pt-20">
+    <div className="lg:flex lg:flex-row-reverse justify-center w-full bg-gray-200 px-6 mb-6 mt-64">
+      <div className="lg:w-3/5 pl-16 md:pt-20 pt-24">
         <p className="text-lg py-1 font-bold font-serif">
-          Name: <span className="font-normal">{name}</span>
+          Name: <span className="font-normal font-mono">{name}</span>
         </p>
         <p className="text-lg  py-1 font-bold font-serif">
-          Email: <span className="font-normal">{email}</span>
+          Email: <span className="font-normal font-mono">{email}</span>
         </p>
         <p className="text-lg py-1 font-bold font-serif">
           Education:{" "}
-          <span className="font-normal">{education || "Not found"}</span>
+          <span className="font-normal font-mono">
+            {education || "Not found"}
+          </span>
         </p>
         <p className="text-lg py-1 font-bold font-serif">
           Location:{" "}
-          <span className="font-normal">{location || "Not found"}</span>
+          <span className="font-normal font-mono">
+            {location || "Not found"}
+          </span>
         </p>
         <p className="text-lg py-1 font-bold font-serif">
           LinkedIn:{" "}
-          <span className="font-normal">{linkedIn || "Not found"}</span>
+          <span className="font-normal font-mono">
+            {linkedIn || "Not found"}
+          </span>
         </p>
         <p className="text-lg py-1 font-bold font-serif">
-          Phone: <span className="font-normal"> {phone || "Not found"}</span>
+          Phone:{" "}
+          <span className="font-normal font-mono"> {phone || "Not found"}</span>
         </p>
       </div>
 
-      <div className="lg:w-2/4 bg-white rounded-3xl">
+      <div className="lg:w-2/5 bg-white rounded-2xl">
         <div className="card-body">
           <h1 className="text-2xl text-center font-serif uppercase pb-5">
             Update Your Profile
