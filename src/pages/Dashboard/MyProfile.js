@@ -56,20 +56,35 @@ const MyProfile = () => {
   };
   const { education, location, phone, linkedIn } = profile;
   return (
-    <div className="font-serif lg:flex lg:flex-row-reverse justify-center items-center bg-slate-50 my-10">
-      <div className="lg:w-3/5 text-center">
-        <h1 className="text-3xl font-bold">Name: {name}</h1>
-        <p>Email: {email}</p>
-        <p>Education: {education || "Not found"}</p>
-        <p>Location: {location || "Not found"}</p>
-        <p>LinkedIn:{linkedIn || "Not found"}</p>
-        <p>Phone: {phone || "Not found"}</p>
+    <div className="lg:flex lg:flex-row-reverse justify-center w-full bg-gray-200 px-6 mb-6 mt-60">
+      <div className="lg:w-2/4 pl-16 md:pt-20">
+        <p className="text-lg py-1 font-bold font-serif">
+          Name: <span className="font-normal">{name}</span>
+        </p>
+        <p className="text-lg  py-1 font-bold font-serif">
+          Email: <span className="font-normal">{email}</span>
+        </p>
+        <p className="text-lg py-1 font-bold font-serif">
+          Education:{" "}
+          <span className="font-normal">{education || "Not found"}</span>
+        </p>
+        <p className="text-lg py-1 font-bold font-serif">
+          Location:{" "}
+          <span className="font-normal">{location || "Not found"}</span>
+        </p>
+        <p className="text-lg py-1 font-bold font-serif">
+          LinkedIn:{" "}
+          <span className="font-normal">{linkedIn || "Not found"}</span>
+        </p>
+        <p className="text-lg py-1 font-bold font-serif">
+          Phone: <span className="font-normal"> {phone || "Not found"}</span>
+        </p>
       </div>
 
-      <div className="lg:w-2/5">
+      <div className="lg:w-2/4 bg-white rounded-3xl">
         <div className="card-body">
-          <h1 className="text-2xl font-bold text-center text-blue-500">
-            Update your profile
+          <h1 className="text-2xl text-center font-serif uppercase pb-5">
+            Update Your Profile
           </h1>
           <form onSubmit={handleUpdateProfile}>
             <div className="form-control">
