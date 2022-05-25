@@ -26,7 +26,7 @@ const Purchase = () => {
     const quantity = e.target.quantity.value;
     const purchase = { userName, name, email, address, mobile, quantity };
 
-    if (quantity < minquantity || quantity > maxquantity) {
+    if (+quantity < +minquantity || +quantity > +maxquantity) {
       return setError(
         `Please order between ${minquantity} units to ${maxquantity} units`
       );

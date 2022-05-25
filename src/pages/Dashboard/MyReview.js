@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swal } from "sweetalert2";
 
 const MyReview = () => {
+  const [rattingError, setRattingError] = useState("");
   const handleForm = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const comment = e.target.comment.value;
     const ratting = e.target.ratting.value;
+    if (ratting < 0 || ratting > 5) {
+      return setRattingError("Retting Will Be Between 0 to 5 ");
+    }
+    setRattingError("");
     const review = { name, comment, ratting };
     console.log(review);
 
@@ -19,6 +24,7 @@ const MyReview = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        e.target.reset();
         console.log(data);
       });
   };
@@ -48,6 +54,7 @@ const MyReview = () => {
             className="input input-bordered"
           />
         </div>
+        {rattingError && <p className="text-red-500">{rattingError}</p>}
         <div className="form-control mt-6">
           <button className="btn btn-primary">Place Your Review</button>
         </div>

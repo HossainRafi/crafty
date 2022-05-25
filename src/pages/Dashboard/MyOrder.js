@@ -9,7 +9,7 @@ const MyOrder = () => {
     fetch("http://localhost:5000/order")
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, []);
+  }, [orders]);
   return (
     <div class="overflow-x-auto">
       <table class="table w-full">
