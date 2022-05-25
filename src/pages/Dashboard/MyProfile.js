@@ -5,8 +5,8 @@ import { useEffect } from "react";
 import { Swal } from "sweetalert2";
 
 const MyProfile = () => {
-  const [profile, setProfile] = useState({});
   const [user] = useAuthState(auth);
+  const [profile, setProfile] = useState({});
   const name = user?.displayName;
   const email = user?.email;
   useEffect(() => {
@@ -56,8 +56,8 @@ const MyProfile = () => {
   };
   const { education, location, phone, linkedIn } = profile;
   return (
-    <div className="font-serif lg:flex lg:flex-row-reverse justify-center items-center bg-slate-50 my-10">
-      <div className="lg:w-3/5 text-center">
+    <div className="lg:flex lg:flex-row-reverse justify-center items-center bg-white">
+      <div className="lg:w-3/5">
         <h1 className="text-3xl font-bold">Name: {name}</h1>
         <p>Email: {email}</p>
         <p>Education: {education || "Not found"}</p>
@@ -67,12 +67,12 @@ const MyProfile = () => {
       </div>
 
       <div className="lg:w-2/5">
-        <div className="card-body">
+        <div className="card-body pt-80">
           <h1 className="text-2xl font-bold text-center text-blue-500">
             Update your profile
           </h1>
           <form onSubmit={handleUpdateProfile}>
-            <div className="form-control">
+            <div className="form-control bg-white py-10">
               <label className="label">
                 <span className="label-text">Name</span>
               </label>

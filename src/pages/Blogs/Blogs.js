@@ -27,7 +27,26 @@ const Blogs = () => {
         <h2 className="text-xl font-serif font-bold text-red-600 mb-4">
           What are the different ways to manage a state in a React application?
         </h2>
-        <p className="text-lg text-justify"></p>
+        <p className="text-lg text-justify">
+          There are four main types of state React apps. Those are Local state,
+          Global state, Server state & URL state.
+        </p>
+        <p>
+          Local State: By using useState,useReducer,useCallback can manage Local
+          State
+        </p>
+        <p>
+          Global State: By using Context API,useReducer,useContext can manage
+          Local Global State
+        </p>
+        <p>
+          Server State: By using useState,useEffect,React Query,fetcher, useSWR
+          can manage Server State
+        </p>
+        <p>
+          Manage URL State: By using useRouter,useParams can manage Manage URL
+          State
+        </p>
       </div>
 
       <div className="bg-gray-100 rounded-xl p-5">
@@ -45,18 +64,16 @@ const Blogs = () => {
 
       <div className="bg-gray-100 rounded-xl p-5">
         <h2 className="text-xl font-serif font-bold text-red-600 mb-4">
-          Why we do not set the state directly in React?
-        </h2>
-        <p className="text-lg text-justify"></p>
-      </div>
-
-      <div className="bg-gray-100 rounded-xl p-5">
-        <h2 className="text-xl font-serif font-bold text-red-600 mb-4">
           You have an array of products. Each object has a name, price,
           description, etc. How will you implement a search to find products by
           name?
         </h2>
-        <p className="text-lg text-justify"></p>
+        <p className="text-lg text-justify">
+          I will implement thi system in my code to find products by name.
+        </p>
+        <p className="text-lg">
+          Array.filter(pd=> pd.name.includes('value of name'))
+        </p>
       </div>
       <div className="bg-gray-100 rounded-xl p-5">
         <h2 className="text-xl font-serif font-bold text-red-600 mb-4">
