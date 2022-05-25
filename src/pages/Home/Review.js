@@ -11,7 +11,7 @@ const Review = () => {
   }, []);
   return (
     <div className="grid md:grid-cols-3 gap-10 pt-7 pb-14 px-10">
-      {review.map((r) => (
+      {review.slice(-3).map((r) => (
         <div className="bg-white rounded-xl py-2">
           <h2 className="font-bold text-lg px-5 pb-2">{r.name}</h2>
           <p className="px-5 pb-3 text-justify">{r.comment}</p>
