@@ -20,16 +20,6 @@ const MyReview = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        // if (data.insertedId) {
-        //   Swal.fire({
-        //     position: "top-center",
-        //     icon: "success",
-        //     title: "Thank you for your review",
-        //     showConfirmButton: false,
-        //     timer: 1500,
-        //   });
-        //   e.target.reset();
-        // }
       });
   };
 
