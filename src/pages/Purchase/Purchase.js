@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import auth from "./../../Firebase/firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Purchase = () => {
+  const navigate = useNavigate();
   const [user] = useAuthState(auth);
   const { id } = useParams();
   const [products, setProducts] = useState({});
@@ -52,7 +53,9 @@ const Purchase = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+
           e.target.reset();
+          navigate("/dashboard/myOrder");
         }
       });
   };
@@ -141,13 +144,22 @@ const Purchase = () => {
                   type="number"
                   name="quantity"
                   className="input input-bordered"
+                  // onChange={handleForm}
                 />
               </div>
               {error && (
                 <p className="text-red-500 text-center pt-1">{error}</p>
               )}
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Confirm Order</button>
+                <button
+                  // disabled={
+                  //   error.quantity?.type === "maxquantity" ||
+                  //   error.quantity?.type === "minquantity"
+                  // }
+                  className="btn btn-primary"
+                >
+                  Confirm Order
+                </button>
               </div>
             </form>
           </div>
