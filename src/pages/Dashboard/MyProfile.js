@@ -57,7 +57,10 @@ const MyProfile = () => {
   const { education, location, phone, linkedIn } = profile;
   return (
     <div>
-      <div className="lg:flex lg:flex-row-reverse justify-center w-full bg-gray-200 px-6">
+      <h1 className="text-center pt-5 font-serif font-bold text-3xl text-blue-500">
+        My Profile
+      </h1>
+      <div className="lg:flex lg:flex-row-reverse justify-center w-full bg-gray-200 px-5 py-10">
         <div className="lg:w-3/5 pl-16 md:pt-20 pt-24">
           <p className="text-lg py-1 font-bold font-serif">
             Name: <span className="font-normal font-mono">{name}</span>

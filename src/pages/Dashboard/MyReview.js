@@ -30,37 +30,46 @@ const MyReview = () => {
   };
 
   return (
-    <div className="card-body bg-white my-10 rounded-2xl w-2/4">
-      <form onSubmit={handleForm}>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text font-serif font-bold">Name</span>
-          </label>
-          <input type="text" name="name" className="input input-bordered" />
-        </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text font-serif font-bold">Comment</span>
-          </label>
-          <input type="text" className="input input-bordered" name="comment" />
-        </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text font-serif font-bold">Ratting</span>
-          </label>
-          <input
-            type="number"
-            name="ratting"
-            className="input input-bordered"
-          />
-        </div>
-        {rattingError && (
-          <p className="text-red-500 text-center">{rattingError}</p>
-        )}
-        <div className="form-control mt-6">
-          <button className="btn btn-primary">Place Your Review</button>
-        </div>
-      </form>
+    <div className="p-5">
+      <h1 className="text-center pb-5 font-serif font-bold text-3xl text-blue-500">
+        Add A Review
+      </h1>
+      <div className="card-body bg-white mx-auto rounded-2xl w-2/4">
+        <form onSubmit={handleForm}>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text font-serif font-bold">Name</span>
+            </label>
+            <input type="text" name="name" className="input input-bordered" />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text font-serif font-bold">Comment</span>
+            </label>
+            <input
+              type="text"
+              className="input input-bordered"
+              name="comment"
+            />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text font-serif font-bold">Ratting</span>
+            </label>
+            <input
+              type="number"
+              name="ratting"
+              className="input input-bordered"
+            />
+          </div>
+          {rattingError && (
+            <p className="text-red-500 text-center">{rattingError}</p>
+          )}
+          <div className="form-control mt-6">
+            <button className="btn btn-primary">Place Your Review</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
