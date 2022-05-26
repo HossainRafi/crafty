@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const { _id, name, img, minQuantity, maxQuantity, desc, price } = product;
+  const { _id, name, img, minquantity, maxquantity, desc, price } = product;
+  console.log(product);
   return (
     <div className="card bg-gray-100">
       <figure className="px-2 pt-5">
@@ -11,8 +12,8 @@ const Product = ({ product }) => {
       <div className="card-body">
         <h2 className="card-title text-2xl mx-auto font-bold">{name}</h2>
         <p className="text-justify">{desc}</p>
-        <p className="font-bold">Available Product: {maxQuantity} Units</p>
-        <p className="font-bold">Minimum Order: {minQuantity} Units</p>
+        <p className="font-bold">Available Product: {maxquantity} Units</p>
+        <p className="font-bold">Minimum Order: {minquantity} Units</p>
         <p className="font-bold">Price: ${price} Per Unit</p>
       </div>
       <div className="mx-auto pb-5">

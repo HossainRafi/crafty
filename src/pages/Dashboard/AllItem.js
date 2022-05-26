@@ -36,7 +36,7 @@ const AllItem = () => {
     });
   };
   return (
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-10">
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-10 p-10">
       {items.map((item) => (
         <div className="card bg-gray-100">
           <figure className="px-2 pt-5">

@@ -6,10 +6,10 @@ const AddItem = () => {
     const name = e.target.name.value;
     const img = e.target.url.value;
     const desc = e.target.desc.value;
-    const minQuantity = e.target.minQuantity.value;
-    const maxQuantity = e.target.maxQuantity.value;
+    const minquantity = e.target.minQuantity.value;
+    const maxquantity = e.target.maxQuantity.value;
     const price = e.target.price.value;
-    const addProduct = { name, img, desc, minQuantity, maxQuantity, price };
+    const addProduct = { name, img, desc, minquantity, maxquantity, price };
     console.log(addProduct);
     fetch("http://localhost:5000/product", {
       method: "POST",
