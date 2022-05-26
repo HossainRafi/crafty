@@ -8,27 +8,30 @@ const AllOrder = () => {
       .then((data) => setOrders(data));
   }, [orders]);
   return (
-    <div>
-      all order
+    <div className="p-5">
+      <h1 className="text-center pb-5 font-serif font-bold text-3xl text-blue-500">
+        All Orders
+      </h1>
       <div class="overflow-x-auto">
         <table class="table w-full">
           <thead>
             <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th className="text-center">No</th>
+              <th className="text-center">User Name</th>
+              <th className="text-center">Product Name</th>
+              <th className="text-center">Order Quantity</th>
+              <th className="text-center">Payment</th>
             </tr>
           </thead>
           <tbody>
             {orders.map((order, index) => (
               <tr>
-                <th>{index + 1}</th>
-                <td>{order.userName}</td>
-                <td>{order.name}</td>
-                <td>{order.quantity}</td>
-                <td>
-                  <button>Pending</button>
+                <th className="text-center">{index + 1}</th>
+                <td className="text-center">{order.userName}</td>
+                <td className="text-center">{order.name}</td>
+                <td className="text-center">{order.quantity}</td>
+                <td className="text-center">
+                  <button className="text-center">Pending</button>
                 </td>
               </tr>
             ))}
