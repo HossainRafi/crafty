@@ -11,24 +11,29 @@ const MyOrder = () => {
       .then((data) => setOrders(data));
   }, [orders]);
   return (
-    <div class="overflow-x-auto">
-      <table class="table w-full">
-        <thead>
-          <tr>
-            <th></th>
-            <th>User Name</th>
-            <th>Product Name</th>
-            <th>Quantity</th>
-            <th>Buy</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {orders.map((order) => (
-            <Order key={order._id} order={order} />
-          ))}
-        </tbody>
-      </table>
+    <div className="p-5">
+      <h1 className="text-center pb-5 font-serif font-bold text-3xl text-blue-500">
+        My Order
+      </h1>
+      <div class="overflow-x-auto">
+        <table class="table w-full">
+          <thead>
+            <tr>
+              <th className="text-center">No:</th>
+              <th className="text-center">User Name</th>
+              <th className="text-center">Product Name</th>
+              <th className="text-center">Quantity</th>
+              <th className="text-center">Buy</th>
+              <th className="text-center">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {orders.map((order) => (
+              <Order key={order._id} order={order} />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

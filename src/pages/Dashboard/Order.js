@@ -27,17 +27,19 @@ const Order = ({ order }) => {
   };
   return (
     <tr>
-      <th>1</th>
+      <th className="text-center">1</th>
       <td className="text-center">{userName}</td>
       <td className="text-center">{name}</td>
       <td className="text-center">{quantity}</td>
       <td className="text-center">
-        <button class="btn btn-xs bg-green-600 border-0 text-white">Buy</button>
+        <button class="btn btn-xs bg-green-600 border-0 text-white text-center">
+          Buy Now
+        </button>
       </td>
       <td className="text-center">
         <button
           onClick={() => handleDelete(order._id)}
-          class="btn btn-xs border-0 bg-red-500 text-white"
+          class="btn btn-xs border-0 bg-red-500 text-white text-center"
         >
           Delete
         </button>

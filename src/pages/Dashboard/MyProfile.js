@@ -56,119 +56,124 @@ const MyProfile = () => {
   };
   const { education, location, phone, linkedIn } = profile;
   return (
-    <div className="lg:flex lg:flex-row-reverse justify-center w-full bg-gray-200 px-6 mb-6 mt-64">
-      <div className="lg:w-3/5 pl-16 md:pt-20 pt-24">
-        <p className="text-lg py-1 font-bold font-serif">
-          Name: <span className="font-normal font-mono">{name}</span>
-        </p>
-        <p className="text-lg  py-1 font-bold font-serif">
-          Email: <span className="font-normal font-mono">{email}</span>
-        </p>
-        <p className="text-lg py-1 font-bold font-serif">
-          Education:{" "}
-          <span className="font-normal font-mono">
-            {education || "Not found"}
-          </span>
-        </p>
-        <p className="text-lg py-1 font-bold font-serif">
-          Location:{" "}
-          <span className="font-normal font-mono">
-            {location || "Not found"}
-          </span>
-        </p>
-        <p className="text-lg py-1 font-bold font-serif">
-          LinkedIn:{" "}
-          <span className="font-normal font-mono">
-            {linkedIn || "Not found"}
-          </span>
-        </p>
-        <p className="text-lg py-1 font-bold font-serif">
-          Phone:{" "}
-          <span className="font-normal font-mono"> {phone || "Not found"}</span>
-        </p>
-      </div>
+    <div>
+      <div className="lg:flex lg:flex-row-reverse justify-center w-full bg-gray-200 px-6">
+        <div className="lg:w-3/5 pl-16 md:pt-20 pt-24">
+          <p className="text-lg py-1 font-bold font-serif">
+            Name: <span className="font-normal font-mono">{name}</span>
+          </p>
+          <p className="text-lg  py-1 font-bold font-serif">
+            Email: <span className="font-normal font-mono">{email}</span>
+          </p>
+          <p className="text-lg py-1 font-bold font-serif">
+            Education:{" "}
+            <span className="font-normal font-mono">
+              {education || "Not found"}
+            </span>
+          </p>
+          <p className="text-lg py-1 font-bold font-serif">
+            Location:{" "}
+            <span className="font-normal font-mono">
+              {location || "Not found"}
+            </span>
+          </p>
+          <p className="text-lg py-1 font-bold font-serif">
+            LinkedIn:{" "}
+            <span className="font-normal font-mono">
+              {linkedIn || "Not found"}
+            </span>
+          </p>
+          <p className="text-lg py-1 font-bold font-serif">
+            Phone:{" "}
+            <span className="font-normal font-mono">
+              {" "}
+              {phone || "Not found"}
+            </span>
+          </p>
+        </div>
 
-      <div className="lg:w-2/5 bg-white rounded-2xl">
-        <div className="card-body">
-          <h1 className="text-2xl font-bold text-center font-serif uppercase pb-5">
-            Update Your Profile
-          </h1>
-          <form onSubmit={handleUpdateProfile}>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Name</span>
-              </label>
-              <input
-                type="text"
-                name="name"
-                value={name}
-                readOnly
-                disabled
-                className="input input-bordered"
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={email}
-                readOnly
-                disabled
-                className="input input-bordered"
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Education</span>
-              </label>
-              <input
-                type="text"
-                name="education"
-                className="input input-bordered"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Location</span>
-              </label>
-              <input
-                type="text"
-                required
-                name="location"
-                className="input input-bordered"
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">LinkedIn</span>
-              </label>
-              <input
-                type="text"
-                required
-                name="linkedIn"
-                className="input input-bordered"
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Phone</span>
-              </label>
-              <input
-                type="text"
-                required
-                name="phone"
-                className="input input-bordered"
-              />
-            </div>
+        <div className="lg:w-2/5 bg-white rounded-2xl">
+          <div className="card-body">
+            <h1 className="text-2xl font-bold text-center font-serif uppercase pb-5">
+              Update Your Profile
+            </h1>
+            <form onSubmit={handleUpdateProfile}>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={name}
+                  readOnly
+                  disabled
+                  className="input input-bordered"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Email</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  readOnly
+                  disabled
+                  className="input input-bordered"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Education</span>
+                </label>
+                <input
+                  type="text"
+                  name="education"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Location</span>
+                </label>
+                <input
+                  type="text"
+                  required
+                  name="location"
+                  className="input input-bordered"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">LinkedIn</span>
+                </label>
+                <input
+                  type="text"
+                  required
+                  name="linkedIn"
+                  className="input input-bordered"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Phone</span>
+                </label>
+                <input
+                  type="text"
+                  required
+                  name="phone"
+                  className="input input-bordered"
+                />
+              </div>
 
-            <div className="form-control mt-6">
-              <button className="btn btn-primary">Update profile</button>
-            </div>
-          </form>
+              <div className="form-control mt-6">
+                <button className="btn btn-primary">Update profile</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

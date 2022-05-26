@@ -28,10 +28,10 @@ const AddItem = () => {
   };
 
   return (
-    <div className="bg-gray-200 py-10">
+    <div className="bg-gray-200 px-10 py-10">
       <form
         onSubmit={handleForm}
-        className="rounded-2xl md:w-[500px] md:mt-44 py-5 bg-gray-400"
+        className="rounded-2xl w-full md:w-3/5 mx-auto py-5 bg-gray-300"
       >
         <h1 className="flex justify-center text-4xl font-bold font-serif text-blue-700 pt-5 pb-5">
           Fill This Form
@@ -78,8 +78,8 @@ const AddItem = () => {
         />
         <input
           type="submit"
-          value="Add Item"
-          className="mx-auto bg-slate-500 px-5 py-1 flex justify-center mt-8 rounded-md text-xl font-bold"
+          value="Add Product"
+          className="mx-auto bg-blue-500 px-5 py-1 flex justify-center mt-8 rounded-md text-xl font-bold"
         />
       </form>
     </div>

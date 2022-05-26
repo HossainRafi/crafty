@@ -20,7 +20,7 @@ import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 
 function App() {
   return (
-    <div className="bg-gray-200">
+    <div className="bg-gray-100">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
