@@ -26,10 +26,11 @@ const Purchase = () => {
     const quantity = e.target.quantity.value;
     const purchase = { userName, name, email, address, mobile, quantity };
 
-    if (+quantity < +minquantity || +quantity > +maxquantity) {
-      return setError(
-        `Please order between ${minquantity} units to ${maxquantity} units`
-      );
+    if (+quantity < +minquantity) {
+      return setError(`Please Order Minimum ${minquantity} Pieces`);
+    }
+    if (+quantity > +maxquantity) {
+      return setError(`You Can Order Maximum ${maxquantity} Pieces`);
     }
 
     fetch("http://localhost:5000/order", {
@@ -142,7 +143,9 @@ const Purchase = () => {
                   className="input input-bordered"
                 />
               </div>
-              {error && <p className="text-red-500">{error}</p>}
+              {error && (
+                <p className="text-red-500 text-center pt-1">{error}</p>
+              )}
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Confirm Order</button>
               </div>
