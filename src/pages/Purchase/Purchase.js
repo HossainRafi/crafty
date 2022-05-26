@@ -13,7 +13,7 @@ const Purchase = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [id]);
-  const { name, img, minquantity, maxquantity, desc, price } = products;
+
   const [error, setError] = useState("");
 
   const handleForm = (e) => {
@@ -26,13 +26,13 @@ const Purchase = () => {
     const quantity = e.target.quantity.value;
     const purchase = { userName, name, email, address, mobile, quantity };
 
-    if (+quantity < +minquantity || +quantity > +maxquantity) {
+    if (+quantity < +minQuantity || +quantity > +maxQuantity) {
       return setError(
-        `Please order between ${minquantity} units to ${maxquantity} units`
+        `Please order between ${minQuantity} units to ${maxQuantity} units`
       );
     }
 
-    fetch("http://localhost:5000/product", {
+    fetch("http://localhost:5000/order", {
       method: "POST",
       body: JSON.stringify({
         purchase,
@@ -55,7 +55,8 @@ const Purchase = () => {
         }
       });
   };
-
+  const { name, img, minQuantity, maxQuantity, desc, price } = products;
+  console.log(minQuantity, maxQuantity);
   return (
     <div className="hero min-h-screen py-10 px-20">
       <div className="hero-content flex-col gap-20 lg:flex-row-reverse">
@@ -66,8 +67,8 @@ const Purchase = () => {
           <div className="card-body">
             <h2 className="card-title text-2xl mx-auto font-bold">{name}</h2>
             <p className="text-justify">{desc}</p>
-            <p className="font-bold">Available Product: {maxquantity} Units</p>
-            <p className="font-bold">Minimum Order: {minquantity} Units</p>
+            <p className="font-bold">Available Product: {maxQuantity} Units</p>
+            <p className="font-bold">Minimum Order: {minQuantity} Units</p>
             <p className="font-bold">Price: ${price} Per Unit</p>
           </div>
         </div>

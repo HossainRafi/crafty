@@ -30,7 +30,13 @@ const Dashboard = () => {
             <Link to="/dashboard/additem">Add Item</Link>
           </li>
           <li className="py-1">
-            <Link to="/dashboard/myitem">My Item</Link>
+            <Link to="/dashboard/allitem">All Item</Link>
+          </li>
+          <li className="py-1">
+            <Link to="/dashboard/allorder">All Order</Link>
+          </li>
+          <li className="py-1">
+            <Link to="/dashboard/makeadmin">Make Admin</Link>
           </li>
         </ul>
       </div>

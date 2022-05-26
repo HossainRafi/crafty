@@ -31,7 +31,7 @@ const AddItem = () => {
     <div className="bg-gray-200 py-10">
       <form
         onSubmit={handleForm}
-        className="rounded-2xl md:w-1/2 mx-auto py-5 bg-gray-400"
+        className="rounded-2xl md:w-[500px] md:mt-44 py-5 bg-gray-400"
       >
         <h1 className="flex justify-center text-4xl font-bold font-serif text-blue-700 pt-5 pb-5">
           Fill This Form

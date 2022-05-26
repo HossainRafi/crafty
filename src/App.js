@@ -14,7 +14,9 @@ import MyOrder from "./pages/Dashboard/MyOrder";
 import MyReview from "./pages/Dashboard/MyReview";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import AddItem from "./pages/Dashboard/AddItem";
-import MyItem from "./pages/Dashboard/MyItem";
+import AllItem from "./pages/Dashboard/AllItem";
+import AllOrder from "./pages/Dashboard/AllOrder";
+import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 
 function App() {
   return (
@@ -43,7 +45,9 @@ function App() {
           <Route path="myorder" element={<MyOrder />} />
           <Route path="myreview" element={<MyReview />} />
           <Route path="additem" element={<AddItem />} />
-          <Route path="myitem" element={<MyItem />} />
+          <Route path="allitem" element={<AllItem />} />
+          <Route path="allorder" element={<AllOrder />} />
+          <Route path="makeadmin" element={<MakeAdmin />} />
         </Route>
 
         <Route path="/portfolio" element={<Portfolio />} />
