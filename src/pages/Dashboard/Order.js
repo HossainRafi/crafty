@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Order = ({ order, index }) => {
@@ -30,11 +31,26 @@ const Order = ({ order, index }) => {
       <td className="text-center">{userName}</td>
       <td className="text-center">{name}</td>
       <td className="text-center">{quantity}</td>
-      <td className="text-center">
-        <button class="btn btn-xs bg-green-600 border-0 text-white text-center">
-          Buy Now
-        </button>
+      {/* ============ */}
+      <td>
+        {order.price && !order.paid && (
+          <Link to={`/dashboard/payment/${order._id}`}>
+            <button className="btn btn-xs bg-green-600 text-white">Pay</button>
+          </Link>
+        )}
+        {order.price && order.paid && (
+          <div>
+            <p>
+              <span className="text-success">Paid</span>
+            </p>
+            <p>
+              Transaction id:{" "}
+              <span className="text-success">{order.transactionId}</span>
+            </p>
+          </div>
+        )}
       </td>
+      {/* ======== */}
       <td className="text-center">
         <button
           onClick={() => handleDelete(order._id)}
