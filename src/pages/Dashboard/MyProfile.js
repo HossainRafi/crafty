@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
 import { useEffect } from "react";
-import { Swal } from "sweetalert2";
+import Swal from "sweetalert2";
 
 const MyProfile = () => {
   const [user] = useAuthState(auth);
@@ -42,16 +42,16 @@ const MyProfile = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        // if (data.result.modifiedCount) {
-        //   Swal.fire({
-        //     position: "top-center",
-        //     icon: "success",
-        //     title: "Your Profile Is Updated !!",
-        //     showConfirmButton: false,
-        //     timer: 1500,
-        //   });
-        //   e.target.reset();
-        // }
+        if (data.modifiedCount) {
+          e.target.reset();
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
       });
   };
   const { education, location, phone, linkedIn } = profile;

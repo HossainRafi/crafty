@@ -14,9 +14,8 @@ const Purchase = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [id]);
-
+  const { name, img, minquantity, maxquantity, desc, price } = products;
   const [error, setError] = useState("");
-
   const handleForm = (e) => {
     e.preventDefault();
     setError("");
@@ -25,7 +24,15 @@ const Purchase = () => {
     const address = e.target.address.value;
     const mobile = e.target.mobile.value;
     const quantity = e.target.quantity.value;
-    const purchase = { userName, name, email, address, mobile, quantity };
+    const purchase = {
+      userName,
+      name,
+      email,
+      address,
+      mobile,
+      quantity,
+      price,
+    };
 
     if (+quantity < +minquantity) {
       return setError(`Please Order Minimum ${minquantity} Pieces`);
@@ -59,7 +66,7 @@ const Purchase = () => {
         }
       });
   };
-  const { name, img, minquantity, maxquantity, desc, price } = products;
+
   return (
     <div className="hero min-h-screen py-10 px-20">
       <div className="hero-content flex-col gap-20 lg:flex-row-reverse">
