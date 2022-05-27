@@ -1,18 +1,17 @@
 import React from "react";
 import Swal from "sweetalert2";
 
-const Order = ({ order }) => {
+const Order = ({ order, index }) => {
   const { userName, name, quantity } = order;
 
   const handleDelete = (id) => {
     Swal.fire({
-      title: "Are You Sure To Delete?",
-      text: "You won't be able to revert this!",
+      title: "Are You Sure To Delete Your Order ?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Delete",
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(`http://localhost:5000/order/${id}`, {
@@ -27,7 +26,7 @@ const Order = ({ order }) => {
   };
   return (
     <tr>
-      <th className="text-center">1</th>
+      <th className="text-center">{index + 1}</th>
       <td className="text-center">{userName}</td>
       <td className="text-center">{name}</td>
       <td className="text-center">{quantity}</td>
@@ -39,7 +38,7 @@ const Order = ({ order }) => {
       <td className="text-center">
         <button
           onClick={() => handleDelete(order._id)}
-          class="btn btn-xs border-0 bg-red-500 text-white text-center"
+          class="btn btn-xs border-0 bg-red-600 text-white text-center"
         >
           Delete
         </button>

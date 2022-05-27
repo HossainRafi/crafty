@@ -54,16 +54,16 @@ const MakeAdmin = () => {
                 <td className="text-center">{user.name}</td>
                 <td className="text-center">{user.email}</td>
                 <td className="text-center">
-                  <button
-                    onClick={() => handleDelete(user._id)}
-                    class="btn btn-xs border-0 bg-red-500 text-white text-center"
-                  >
-                    Delete User
+                  <button class="btn btn-xs border-0 bg-green-600 text-white text-center">
+                    Make Admin
                   </button>
                 </td>
                 <td className="text-center">
-                  <button class="btn btn-xs border-0 bg-green-500 text-white text-center">
-                    Make Admin
+                  <button
+                    onClick={() => handleDelete(user._id)}
+                    class="btn btn-xs border-0 bg-red-600 text-white text-center"
+                  >
+                    Delete User
                   </button>
                 </td>
               </tr>

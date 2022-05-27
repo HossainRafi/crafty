@@ -42,16 +42,16 @@ const MyProfile = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.result.modifiedCount) {
-          Swal.fire({
-            position: "top-center",
-            icon: "success",
-            title: "Update profile successfully",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          e.target.reset();
-        }
+        // if (data.result.modifiedCount) {
+        //   Swal.fire({
+        //     position: "top-center",
+        //     icon: "success",
+        //     title: "Your Profile Is Updated !!",
+        //     showConfirmButton: false,
+        //     timer: 1500,
+        //   });
+        //   e.target.reset();
+        // }
       });
   };
   const { education, location, phone, linkedIn } = profile;
