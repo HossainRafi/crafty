@@ -26,15 +26,14 @@ const Signup = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
   const [updateProfile, updating, uError] = useUpdateProfile(auth);
-// --------------------------------------------------------------------------
+  // --------------------------------------------------------------------------
   // const [token] = useToken(user || gUser);
 
   if (user || gUser) {
     navigate(from, { replace: true });
   }
-// --------------------------------------------------------------------------
-    
-    
+  // --------------------------------------------------------------------------
+
   if (loading || gLoading || updating) {
     return <Loading />;
   }
@@ -48,7 +47,7 @@ const Signup = () => {
     await signInWithGoogle();
   };
   return (
-    <div className="w-2/5 mx-auto p-10 my-10 rounded-xl bg-gray-300">
+    <div className="md:w-2/5 mx-auto p-10 my-10 rounded-xl bg-gray-300">
       <div>
         <h1 className="text-center text-4xl font-bold font-serif text-blue-600 pb-10">
           Please Register

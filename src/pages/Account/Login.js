@@ -49,7 +49,7 @@ const Login = () => {
   };
 
   return (
-    <div className="w-2/5 mx-auto p-10 my-10 rounded-xl bg-gray-300">
+    <div className="md:w-2/5 mx-auto p-10 my-10 rounded-xl bg-gray-300">
       <div>
         <h1 className="text-center text-4xl font-bold font-serif text-blue-600 pb-10">
           Please Login
@@ -137,10 +137,7 @@ const Login = () => {
 
       <p className="text-center text-lg font-semibold mt-4">
         New Here ?{" "}
-        <Link
-          to="/signup"
-          className="text-blue-600 border-b-2 border-blue-600"
-        >
+        <Link to="/signup" className="text-blue-600 border-b-2 border-blue-600">
           Create An Account
         </Link>
       </p>

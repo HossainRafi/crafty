@@ -158,15 +158,7 @@ const Purchase = () => {
                 <p className="text-red-500 text-center pt-1">{error}</p>
               )}
               <div className="form-control mt-6">
-                <button
-                  // disabled={
-                  //   error.quantity?.type === "maxquantity" ||
-                  //   error.quantity?.type === "minquantity"
-                  // }
-                  className="btn btn-primary"
-                >
-                  Confirm Order
-                </button>
+                <button className="btn btn-primary">Confirm Order</button>
               </div>
             </form>
           </div>
