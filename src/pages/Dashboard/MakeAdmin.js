@@ -8,7 +8,6 @@ const MakeAdmin = () => {
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, [users]);
-  console.log(users);
 
   const handleDelete = (id) => {
     Swal.fire({
