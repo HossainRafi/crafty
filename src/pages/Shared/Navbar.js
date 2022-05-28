@@ -72,6 +72,14 @@ const Navbar = () => {
       <div className="navbar-center px-8 font-bold font-serif text-gray-700 hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
+      <div className="navbar-end">
+        <label
+          htmlFor="my-drawer-2"
+          className="btn btn-sm drawer-button lg:hidden"
+        >
+          Sidebar
+        </label>
+      </div>
     </div>
   );
 };
