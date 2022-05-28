@@ -14,16 +14,9 @@ const stripePromise = loadStripe(
 );
 const Payment = () => {
   const { id } = useParams();
-  const url = `http://localhost:5000/order/${id}`;
-  //=========================================================================================
-  //   const { data: appointment, isLoading } = useQuery(["booking", id], () =>
-  //     fetch(url).then((res) => res.json())
-  //   );
-  //   if (isLoading) {
-  //     return <Loading />;
-  //   }
-  //==========================================================================================
   const [orders, setOrders] = useState([]);
+
+  const url = `http://localhost:5000/order/${id}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
