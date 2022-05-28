@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 
 const CheckoutForm = ({ orders }) => {
-  const { price } = orders;
+  const { price, email, userName, _id } = orders;
 
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
+  const [success, setSuccess] = useState("");
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
@@ -42,12 +43,24 @@ const CheckoutForm = ({ orders }) => {
     });
 
     setCardError(error?.message || "");
-    // if (error) {
-    //   setCardError(error.message);
-    // } else {
-    //   console.log("[PaymentMethod]", paymentMethod);
-    //   setCardError("");
-    // }
+    setSuccess("");
+    const { paymentIntent, error: intentError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            name: userName,
+            email: email,
+          },
+        },
+      });
+    if (intentError) {
+      setCardError(intentError?.message);
+    } else {
+      setCardError("");
+      console.log(paymentIntent);
+      setSuccess("Your Payment Is Completed");
+    }
   };
   return (
     <div>
@@ -76,16 +89,16 @@ const CheckoutForm = ({ orders }) => {
           Pay
         </button>
       </form>
-      {/* {cardError && <p className="text-red-600">{cardError}</p>}
+      {cardError && <p className="text-red-600 text-center">{cardError}</p>}
       {success && (
-        <div className="text-green-500">
+        <div className="text-green-600 text-center">
           <p>{success}</p>
-          <p>
+          {/* <p>
             your transaction Id:{" "}
             <span className="text-blue-500 font-bold">{transactionId}</span>
-          </p>
+          </p> */}
         </div>
-      )} */}
+      )}
     </div>
   );
 };
