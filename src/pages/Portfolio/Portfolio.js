@@ -4,10 +4,10 @@ import img from "../../utilities/me.jpg";
 const Portfolio = () => {
   return (
     <div>
-      <div class="min-h-[90vh] py-10">
-        <div class="md:flex lg:flex-row-reverse">
-          <div class="avatar md:w-2/6 flex justify-center items-center px-10">
-            <div class="w-70 rounded-full">
+      <div className="min-h-[90vh] py-10">
+        <div className="md:flex lg:flex-row-reverse">
+          <div className="avatar md:w-2/6 flex justify-center items-center px-10">
+            <div className="w-70 rounded-full">
               <img src={img} alt="" />
             </div>
           </div>

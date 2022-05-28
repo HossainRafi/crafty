@@ -35,8 +35,8 @@ const MakeAdmin = () => {
       <h1 className="text-center pb-5 font-serif font-bold text-3xl text-blue-500">
         All Users
       </h1>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               <th className="text-center">No</th>
@@ -53,14 +53,14 @@ const MakeAdmin = () => {
                 <td className="text-center">{user.name}</td>
                 <td className="text-center">{user.email}</td>
                 <td className="text-center">
-                  <button class="btn btn-xs border-0 bg-green-600 text-white text-center">
+                  <button className="btn btn-xs border-0 bg-green-600 text-white text-center">
                     Make Admin
                   </button>
                 </td>
                 <td className="text-center">
                   <button
                     onClick={() => handleDelete(user._id)}
-                    class="btn btn-xs border-0 bg-red-600 text-white text-center"
+                    className="btn btn-xs border-0 bg-red-600 text-white text-center"
                   >
                     Delete User
                   </button>

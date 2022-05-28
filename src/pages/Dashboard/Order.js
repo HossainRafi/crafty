@@ -54,7 +54,7 @@ const Order = ({ order, index }) => {
       <td className="text-center">
         <button
           onClick={() => handleDelete(order._id)}
-          class="btn btn-xs border-0 bg-red-600 text-white text-center"
+          className="btn btn-xs border-0 bg-red-600 text-white text-center"
         >
           Delete
         </button>
