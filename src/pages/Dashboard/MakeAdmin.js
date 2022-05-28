@@ -43,8 +43,8 @@ const MakeAdmin = () => {
               <th className="text-center">No</th>
               <th className="text-center">User Name</th>
               <th className="text-center">Email</th>
-              <th className="text-center">Delete User</th>
               <th className="text-center">Make Admin</th>
+              <th className="text-center">Delete User</th>
             </tr>
           </thead>
           <tbody>
