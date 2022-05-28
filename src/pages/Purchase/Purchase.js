@@ -10,7 +10,7 @@ const Purchase = () => {
   const { id } = useParams();
   const [products, setProducts] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://desolate-waters-73882.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [id]);
@@ -41,7 +41,7 @@ const Purchase = () => {
       return setError(`You Can Order Maximum ${maxquantity} Pieces`);
     }
 
-    fetch("http://localhost:5000/order", {
+    fetch("https://desolate-waters-73882.herokuapp.com/order", {
       method: "POST",
       body: JSON.stringify({
         purchase,

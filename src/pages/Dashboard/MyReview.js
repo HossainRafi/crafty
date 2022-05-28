@@ -15,7 +15,7 @@ const MyReview = () => {
     const review = { name, comment, ratting };
     console.log(review);
 
-    fetch("http://localhost:5000/review", {
+    fetch("https://desolate-waters-73882.herokuapp.com/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

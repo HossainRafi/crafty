@@ -15,7 +15,7 @@ const Order = ({ order, index }) => {
       confirmButtonText: "Delete",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://desolate-waters-73882.herokuapp.com/order/${id}`, {
           method: "delete",
         })
           .then((res) => res.json())

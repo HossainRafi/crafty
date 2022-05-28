@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const MakeAdmin = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://desolate-waters-73882.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, [users]);
@@ -20,7 +20,7 @@ const MakeAdmin = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/user/${id}`, {
+        fetch(`https://desolate-waters-73882.herokuapp.com/user/${id}`, {
           method: "delete",
         })
           .then((res) => res.json())

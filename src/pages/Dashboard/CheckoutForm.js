@@ -13,7 +13,7 @@ const CheckoutForm = ({ orders }) => {
   const [clientSecret, setClientSecret] = useState("");
   console.log(clientSecret);
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://desolate-waters-73882.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const CheckoutForm = ({ orders }) => {
         orders: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`http://localhost:5000/order/${_id}`, {
+      fetch(`https://desolate-waters-73882.herokuapp.com/order/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

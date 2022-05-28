@@ -11,7 +11,7 @@ const AddItem = () => {
     const price = e.target.price.value;
     const addProduct = { name, img, desc, minquantity, maxquantity, price };
     console.log(addProduct);
-    fetch("http://localhost:5000/product", {
+    fetch("https://desolate-waters-73882.herokuapp.com/product", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

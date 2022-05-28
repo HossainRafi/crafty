@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const AllItem = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://desolate-waters-73882.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [items]);
@@ -19,7 +19,7 @@ const AllItem = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:5000/item/${id}`;
+        const url = `https://desolate-waters-73882.herokuapp.com/item/${id}`;
         fetch(url, {
           method: "delete",
           headers: {
