@@ -106,7 +106,7 @@ const CheckoutForm = ({ orders }) => {
         <button
           className="btn btn-sm px-5 bg-green-600 text-white mt-10 border-0"
           type="submit"
-          disabled={!stripe || !clientSecret}
+          disabled={!stripe || !clientSecret || success}
         >
           Pay
         </button>
